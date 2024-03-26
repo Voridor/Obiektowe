@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90119be8-b3a3-49fd-9329-b8f77c7854f6" name="Changes" comment="" />
+    <list default="true" id="90119be8-b3a3-49fd-9329-b8f77c7854f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Lab01/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +46,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-78a6f59c" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -56,8 +61,7 @@
       <workItem from="1710785594976" duration="13000" />
       <workItem from="1710872130026" duration="553000" />
       <workItem from="1710872712051" duration="1430000" />
-      <workItem from="1710874201570" duration="2308000" />
-      <workItem from="1710877091068" duration="67000" />
+      <workItem from="1710874201570" duration="2998000" />
     </task>
     <servers />
   </component>

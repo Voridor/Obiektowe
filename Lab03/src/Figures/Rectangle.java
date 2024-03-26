@@ -38,6 +38,6 @@ public class Rectangle {
     }
 
     public void view(){
-        System.out.format("FiguraL %s, bok a %.2f, bok b %.2f, pole:%.2f, obwod:%.2f",name,a,b,pole(a,b),obwod(a,b));
+        System.out.format("Figura %s, bok a %.2f, bok b %.2f, pole:%.2f, obwod:%.2f",name,a,b,pole(a,b),obwod(a,b));
     }
 }
