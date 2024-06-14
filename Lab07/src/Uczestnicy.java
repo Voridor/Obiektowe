@@ -4,7 +4,7 @@ public class Uczestnicy {
     List<Integer> ID = new ArrayList<>();
     List<String> imie = new ArrayList<>();
     List<Integer> wiek = new ArrayList<>();
-    LinkedList
+    //LinkedList
 
     public Uczestnicy(int ID, String imie, int wiek) {
         this.ID.add(ID);
