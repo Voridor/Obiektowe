@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="735daa15-b4c6-442c-b642-d10f6f068619" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AddingWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AddingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChoosingWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChoosingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CookedWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CookedWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CookingWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CookingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicrowaveFront.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicrowaveFront.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OverCookedWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OverCookedWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnderCookedWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnderCookedWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUIProjekt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../GUIProjekt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2iQ0H4BsK6Tw8S4bqJTAujrhv7h" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Kacper/IdeaProjects/Obiektowe/GUIProjekt",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="735daa15-b4c6-442c-b642-d10f6f068619" name="Changes" comment="" />
+      <created>1719407402453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719407402453</updated>
+      <workItem from="1719407403520" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
