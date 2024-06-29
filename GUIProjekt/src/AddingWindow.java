@@ -14,13 +14,14 @@ public class AddingWindow extends JFrame {
     private JButton powrotButton;
     private JButton zapiszButton;
     private JTextField textField3;
+    private JTextField textField5;
     private JFormattedTextField formattedTextField1;
 
     public AddingWindow() {
         super("AddingWindow");
         this.setContentPane(this.panel1);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(700,200);
+        this.setSize(900,200);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
@@ -34,6 +35,8 @@ public class AddingWindow extends JFrame {
         //textField4.setDocument(new JTextFieldLimit(2));
         AbstractDocument doc4 = (AbstractDocument) textField4.getDocument();
         doc4.setDocumentFilter(new NumericLimitDocumentFilter(2));
+        AbstractDocument doc5 = (AbstractDocument) textField5.getDocument();
+        doc5.setDocumentFilter(new NumericLimitDocumentFilter(3));
 
         powrotButton.addActionListener(new ActionListener() {
             @Override
@@ -60,12 +63,13 @@ public class AddingWindow extends JFrame {
                     return;
                 }
                 //if ()
-                String sql = "INSERT INTO mikrofalowka.jedzenie VALUES (null,?, ?, ?)";
+                String sql = "INSERT INTO mikrofalowka.jedzenie VALUES (null,?, ?, ?, ?)";
                 try (Connection conn = DBConnection.getConnection();
                      PreparedStatement pstmt = conn.prepareStatement(sql)) {
                     pstmt.setString(1, textField1.getText());
                     pstmt.setTime(2, java.sql.Time.valueOf("00:"+ textField2.getText()+":"+ textField3.getText()));
                     pstmt.setTime(3, java.sql.Time.valueOf("00:00:"+ textField4.getText()));
+                    pstmt.setInt(4, Integer.parseInt(textField5.getText()));
                     pstmt.executeUpdate();
                 } catch (SQLException ex) {
                     ex.printStackTrace();

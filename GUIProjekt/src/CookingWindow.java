@@ -9,15 +9,18 @@ import java.time.LocalTime;
 
 public class CookingWindow extends JFrame{
 
-    private JTextField textField1;
     private JProgressBar progressBar1;
     private JPanel mainPannel;
     private JButton skipWaitingButton;
+    private JLabel label1;
 
     private int czas;
     private String nazwa;
+    private int temperatura;
 
-    public CookingWindow(String name, int time) {
+    Jedzenie jedzenie;
+
+    public CookingWindow(String name, int time,int temperature) {
         super("CookingWindow");
         this.setContentPane(this.mainPannel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,6 +30,7 @@ public class CookingWindow extends JFrame{
         czas = time;
         System.out.println(czas);
         nazwa = name;
+        temperatura = temperature;
 
         new ProgressWorker().execute();
     }
@@ -37,7 +41,7 @@ public class CookingWindow extends JFrame{
             final double[] counter = {0};
             while (counter[0] <= czas){
                 System.out.println(Math.round((counter[0] /czas)*100));
-                textField1.setText("Proszę czekać ...");
+                label1.setText("Proszę czekać ...");
                 //textField1.setText("Czas to: " + czas);
                 progressBar1.setValue((int) (Math.round((counter[0] /czas)*100)));
                 skipWaitingButton.addActionListener(new ActionListener() {
@@ -58,7 +62,7 @@ public class CookingWindow extends JFrame{
 
         @Override
         protected void done() {
-            textField1.setText("Gotowe!");
+            label1.setText("Gotowe!");
             int optT = 0;
             int pmT = 0;
             try (
@@ -72,25 +76,27 @@ public class CookingWindow extends JFrame{
                     LocalTime plusminus = rs.getObject("czas_+-", LocalTime.class);
                     long plusminusTime = plusminus.toSecondOfDay();
                     pmT = (int) plusminusTime;
-                    System.out.println("Optimal time: " + optimalTime+ " +- " + plusminusTime);
+                    //System.out.println("Optimal time: " + optimalTime+ " +- " + plusminusTime);
                     //System.out.println(rs.getString("optymalnyczasgotowania") +" "+rs.getString("czas_+-"));
+                    jedzenie = new Jedzenie(rs.getString("nazwa"),optT,pmT,rs.getInt("temperatura"));
+                    System.out.println(jedzenie.getNazwa() + " " + jedzenie.getCzasGotowania() + " " + jedzenie.getCzasPlusMinus() + " " + jedzenie.getTemperatura());
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
 
-            if (czas>optT+pmT){
-                textField1.setText("Za długo gotowane");
+            if (czas>optT+pmT || temperatura>jedzenie.getTemperatura()){
+                label1.setText("Za długo gotowane");
                 dispose();
                 OverCookedWindow overCookedWindow = new OverCookedWindow();
                 overCookedWindow.setVisible(true);
-            }else if (czas<optT-pmT){
-                textField1.setText("Za krótko gotowane");
+            }else if (czas<optT-pmT || temperatura<jedzenie.getTemperatura()){
+                label1.setText("Za krótko gotowane");
                 dispose();
                 UnderCookedWindow underCookedWindow = new UnderCookedWindow();
                 underCookedWindow.setVisible(true);
             }else{
-                textField1.setText("Idealnie gotowane");
+                label1.setText("Idealnie gotowane");
                 dispose();
                 CookedWindow cookedWindow = new CookedWindow();
                 cookedWindow.setVisible(true);

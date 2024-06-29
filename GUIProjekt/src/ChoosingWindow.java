@@ -28,7 +28,11 @@ public class ChoosingWindow extends JFrame{
             }
             list1.setModel(demoLista);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(new JFrame(), "Błąd połączenia z bazą danych, uruchom baze danych i kliknij OK",
+                    "Uwaga", JOptionPane.ERROR_MESSAGE);
+            dispose();
+            ChoosingWindow choosingWindow = new ChoosingWindow();
+            choosingWindow.setVisible(true);
         }
 
         nextButton.addActionListener(new ActionListener() {

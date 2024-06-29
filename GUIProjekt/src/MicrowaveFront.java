@@ -22,6 +22,9 @@ public class MicrowaveFront extends JFrame {
     private JButton clearButton;
     private JLabel wybraneLabel;
 
+    private boolean isTimeSet = false;
+    private int calkowityCzas = 0;
+
     public MicrowaveFront(String name) {
     super("MicrowaveFront");
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,6 +32,7 @@ public class MicrowaveFront extends JFrame {
     this.setVisible(true);
     this.setContentPane(this.front);
     this.setLocationRelativeTo(null);
+    JOptionPane.showMessageDialog(null, "Wpisz czas gotowania w minutach i sekundach");
         /*enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,14 +44,27 @@ public class MicrowaveFront extends JFrame {
         enterButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (number2.isEmpty() || number3.isEmpty() || number4.isEmpty()){
+                if (!isTimeSet && (number2.isEmpty() || number3.isEmpty() || number4.isEmpty())){
                     JOptionPane.showMessageDialog(null, "Podaj czas");
                     return;
+                }else if (!isTimeSet){
+                    isTimeSet = true;
+                    calkowityCzas = Integer.parseInt(number1 + number2)*60+Integer.parseInt(number3 + number4);
+                    timeTextPane.setText("");
+                    number1 = "";
+                    number2 = "";
+                    number3 = "";
+                    number4 = "";
                 }
+                if (isTimeSet && (number2.isEmpty() || number3.isEmpty() || number4.isEmpty())){
+                    JOptionPane.showMessageDialog(null, "Podaj temperaturę");
+                    }else {
+                        dispose();
+                        CookingWindow cookingWindow = new CookingWindow(name, calkowityCzas, Integer.parseInt(number2 + number3 + number4));
+                        cookingWindow.setVisible(true);
+                    }
+
                 super.mouseClicked(e);
-                dispose();
-                CookingWindow cookingWindow = new CookingWindow(name, Integer.parseInt(number1 + number2)*60+Integer.parseInt(number3 + number4));
-                cookingWindow.setVisible(true);
             }
         });
         a1Button.addActionListener(new ActionListener() {
@@ -126,23 +143,39 @@ public class MicrowaveFront extends JFrame {
     String number3 = "";
     String number4 = "";
     public void UpdateTime(int time){
-        if (number4.length() == 0){
-            number4 = Integer.toString(time);
-        } else if (number3.length() == 0){
-            number3 = number4;
-            number4 = Integer.toString(time);
+        if (!isTimeSet) {
+            if (number4.isEmpty()) {
+                number4 = Integer.toString(time);
+            } else if (number3.isEmpty()) {
+                number3 = number4;
+                number4 = Integer.toString(time);
 
-        } else if (number2.length() == 0){
-            number2 = number3;
-            number3 = number4;
-            number4 = Integer.toString(time);
+            } else if (number2.isEmpty()) {
+                number2 = number3;
+                number3 = number4;
+                number4 = Integer.toString(time);
 
-        } else if (number1.length() == 0){
-            number1 = number2;
-            number2 = number3;
-            number3 = number4;
-            number4 = Integer.toString(time);
+            } else if (number1.isEmpty()) {
+                number1 = number2;
+                number2 = number3;
+                number3 = number4;
+                number4 = Integer.toString(time);
+            }
+            timeTextPane.setText(number1 + number2 + ":" + number3 + number4);
+        }else{
+            if (number4.isEmpty()) {
+                number4 = Integer.toString(time);
+            } else if (number3.isEmpty()) {
+                number3 = number4;
+                number4 = Integer.toString(time);
+
+            } else if (number2.isEmpty()) {
+                number2 = number3;
+                number3 = number4;
+                number4 = Integer.toString(time);
+            }
+            timeTextPane.setText(number2 + number3 + number4);
+            System.out.println(number2 + number3 + number4);
         }
-        timeTextPane.setText(number1 + number2 + ":" + number3 + number4);
     }
 }
