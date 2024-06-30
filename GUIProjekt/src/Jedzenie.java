@@ -1,9 +1,9 @@
 public class Jedzenie {
 
-    String nazwa;
-    int czasGotowania;
-    int czasPlusMinus;
-    int temperatura;
+    private String nazwa;
+    private int czasGotowania;
+    private int czasPlusMinus;
+    private int temperatura;
 
     public Jedzenie(String nazwa, int czasGotowania, int czasPlusMinus, int temperatura) {
         this.nazwa = nazwa;
